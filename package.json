@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.5.0"
+  },
+  "scripts": {
+    "dev": "node server.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "setup": "node scripts/setup.mjs",
+    "postinstall": "node scripts/setup.mjs"
+  },
+  "dependencies": {
+    "sharp": "0.35.5"
+  },
+  "description": "A local-first portfolio and interactive magazine framework.",
+  "license": "MIT"
+}

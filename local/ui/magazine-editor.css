@@ -1,0 +1,37 @@
+@import '/manage/editorial-editor.css';
+@import '/manage/exhibition-editor.css';
+.mag-editor{margin-top:38px;border-top:1px solid var(--line);padding-top:26px;min-width:0}.mag-editor-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:20px}.mag-editor-heading h3{font:400 24px var(--serif)}.mag-editor-heading span{font-size:11px;color:var(--muted)}
+.mag-toolbar,.mag-inspector{display:flex;flex-wrap:wrap;align-items:end;gap:8px;padding:14px;background:#e9ede4;border:1px solid #d4dbcc;position:relative;z-index:2}.mag-editor-controls{position:sticky;top:0;z-index:5}.mag-toolbar{position:relative}.mag-control{display:flex;flex-direction:column;gap:5px;font-size:10px;color:var(--muted)}
+.mag-editor .mag-control select,.mag-editor .mag-control input{width:auto;min-width:70px;max-width:150px;min-height:34px;height:34px;padding:4px 8px;font-size:12px}.mag-editor .mag-control input[type=color]{width:48px;min-width:48px}
+.mag-editor button{border:1px solid #c7d0be;border-radius:4px;background:#f7f8f4;padding:8px 10px;font:400 12px var(--sans);min-height:34px;color:#222521}.mag-editor button:hover{background:#dbe4d2}.mag-editor button:disabled{opacity:.4;cursor:default}
+.mag-inspector{background:#f1f3ed;border-top:0;position:relative;z-index:1}.mag-editor .field-help{margin:12px 0;max-width:65em}
+.mag-edit-paper{padding:42px 32px;background:#fafbf8;border:1px solid #dce1d5;margin-top:20px;min-height:450px;box-shadow:0 12px 35px #22252109;isolation:isolate}
+.mag-edit-block{position:relative;outline:1px solid transparent;outline-offset:6px;min-height:40px}.mag-edit-block.is-selected{outline-color:#95a58d}.mag-edit-text{outline:0;min-height:1.8em;white-space:pre-wrap}.mag-edit-text:empty:before,.mag-edit-text:has(>span:only-child:empty):before{content:attr(data-placeholder);color:#92998c;pointer-events:none;font:400 15px/1.8 var(--sans)}
+.mag-editor .mag-drag{position:absolute;left:-28px;top:0;min-height:26px;width:22px;padding:2px;border:0;background:transparent;color:#6e7b62;opacity:0;cursor:grab}.mag-edit-block:hover>.mag-drag,.mag-edit-block.is-selected>.mag-drag,.mag-drag:focus{opacity:1}
+.mag-editor .mag-resize{position:absolute;bottom:-10px;right:-10px;width:24px;height:24px;min-height:24px;padding:0;border-radius:50%;background:#e5ecdf;border:1px solid #879777;cursor:nwse-resize;touch-action:none;opacity:0}.mag-edit-block.is-selected>.mag-resize{opacity:1}
+.mag-editor .mag-caption{border:0!important;border-bottom:1px dashed #c5d0bb!important;border-radius:0!important;background:transparent!important;font:400 12px/1.6 var(--sans)!important;padding:8px 0!important;min-height:32px!important;color:inherit!important}
+.mag-expanded{overflow:hidden}.mag-editor.is-expanded{position:fixed;inset:16px;z-index:100;background:#f0f2eb;padding:22px 30px;margin:0;overflow:auto;border:1px solid #cdd5c5;box-shadow:0 0 0 30px #22252180}.mag-editor.is-expanded .mag-edit-paper{max-width:1000px;margin-inline:auto}.mag-editor.is-expanded .mag-editor-controls{top:-22px}.mag-editor.is-expanded .mag-inspector{position:relative;top:auto}
+.mag-editor.is-preview .mag-edit-paper{outline:0}.mag-editor.is-preview .mag-edit-paper .mag-block{outline:none}
+@media(max-width:750px){.mag-edit-paper{padding:28px 24px}.mag-editor-controls,.mag-toolbar,.mag-inspector{position:relative;top:auto}.mag-editor.is-expanded{inset:6px;padding:12px}.mag-editor.is-expanded .mag-toolbar{position:relative;top:auto}.mag-editor .mag-control select{max-width:130px}.mag-editor .mag-drag{left:-23px}.mag-edit-paper .mag-block[data-wrap]{float:none;width:100%!important;margin-inline:0}.mag-editor-heading{flex-wrap:wrap}}
+
+.mag-edit-block[data-wrap=right]>.mag-resize{left:-10px;right:auto;cursor:nesw-resize}
+
+.mag-object-controls{display:flex;align-items:end;flex-wrap:wrap;gap:8px;flex-basis:100%;border-top:1px solid #d6ddce;padding-top:10px;margin-top:2px}
+.mag-object-controls[hidden],.mag-object-status[hidden]{display:none}
+.mag-object-status{flex-basis:100%;font:400 11px/1.7 var(--sans);color:var(--muted);margin:2px 0 0}
+.mag-editor .mag-object-controls input{min-width:70px;width:94px}
+.mag-editor .mag-object-controls select[aria-label="选择对象"]{max-width:210px}
+.mag-edit-block[data-fixed=true]>.mag-edit-text{height:100%;min-height:0;overflow:auto;scrollbar-width:thin}
+.mag-free-surface .mag-edit-block[data-wrap]>.mag-resize{left:auto;right:-10px;cursor:nwse-resize}
+.mag-free-surface .mag-edit-block>.mag-drag{left:0;top:-24px;touch-action:none;background:#eef1e9;z-index:1}
+.mag-editor .mag-free-surface .mag-image-frame{cursor:move;touch-action:none}
+.mag-edit-paper[data-layout=free] .mag-canvas-viewport{overflow:visible;outline:1px dashed #b6c1ab}
+.mag-editor.is-preview .mag-edit-paper .mag-canvas-viewport{outline:none;overflow:hidden}
+.mag-editor.is-preview .mag-edit-paper .mag-canvas-viewport.is-original-size{overflow:auto}
+.mag-edit-block{scroll-margin-top:var(--mag-toolbar-height,280px)}
+.mag-editor.is-expanded{scroll-padding-top:var(--mag-toolbar-height,280px)}
+.mag-editor .mag-inspector{height:230px;overflow:auto;align-content:flex-start;scrollbar-width:thin}
+@media(max-width:750px){.mag-editor .mag-inspector{height:auto;overflow:visible}}
+
+.manager select.editor-font-select,.manager .gb-control select.editor-font-select{min-width:190px;max-width:260px;width:220px;text-overflow:ellipsis}.gre-short-tools{flex-wrap:wrap;align-items:end}
+

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+<defs>
+  <linearGradient id="t" x2="90%" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#f2f4ff"/><stop offset=".42" stop-color="#bccdff"/><stop offset="1" stop-color="#849aef"/></linearGradient>
+  <linearGradient id="b" x2="1" y2="60%"><stop stop-color="#98adf5"/><stop offset=".48" stop-color="#586aae"/><stop offset="1" stop-color="#a8baff"/></linearGradient>
+  <linearGradient id="p" x2="0" y2="1"><stop stop-color="#7176fa"/><stop offset="1" stop-color="#323e9c"/></linearGradient>
+  <radialGradient id="h"><stop stop-color="#c5d3ff" stop-opacity=".65"/><stop offset="1" stop-color="#aec1ff" stop-opacity="0"/></radialGradient>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#aab8f8" opacity=".32"/></pattern>
+  <g id="key"><ellipse cy="13" rx="29" ry="18" fill="#242b67"/><path d="M-29 0v13a29 18 0 0 0 58 0V0" fill="url(#p)"/><ellipse rx="29" ry="18" fill="url(#t)" stroke="#e7edff" stroke-width="1.4"/><ellipse rx="21" ry="12" stroke="#91a2d4" stroke-width=".8"/></g>
+</defs>
+<g transform="rotate(-12 320 190)"><rect x="40" y="35" width="560" height="290" fill="url(#grid)"/><ellipse cx="322" cy="222" rx="223" ry="68" fill="url(#h)" opacity=".24"/>
+<g transform="matrix(1.16 .45 -.91 .6 211 58)">
+<path d="M40 35h58v46h48v58H98v46H40v-46H-8V81h48z" transform="translate(17 40)" fill="#090e37" opacity=".48"/>
+<path d="M40 35h58v46h48v58H98v46H40v-46H-8V81h48z" transform="translate(12 20)" fill="url(#b)"/>
+<path d="m-8 81 12 20v58l-12-20zm0 58 12 20h48l-12-20zm48 46 12 20h58l-12-20zm58 0 12 20v-46l-12-20zm0-46 12 20h48l-12-20zm48 0 12 20V101l-12-20zm-48-58 12 20V55L98 35z" fill="url(#b)"/>
+<path d="M40 35h58v46h48v58H98v46H40v-46H-8V81h48z" fill="url(#t)" stroke="#f1f4ff" stroke-width="2.4" stroke-linejoin="round"/>
+<g fill="#7282b4"><path d="m69 46-8 9h16zm-62 63 9-8v16zm125 0-9 8v-16zm-63 65 8-9H61z"/></g></g>
+<use href="#key" x="400" y="106"/><use href="#key" x="460" y="138"/><use href="#key" x="347" y="140"/><use href="#key" x="407" y="173"/>
+</g></svg>

@@ -1,0 +1,201 @@
+/* One material language. Existing gray-green palette, shared by every public page. */
+:root{
+  --paper:#f5f5f2;--ink:#222521;--muted:#666b65;--line:#d8dcd4;--accent:#2d4af0;
+  --mist:#e8e9e5;--sage:#d5dace;--glass:#f5f5f2c9;--glass-edge:#ffffffb3;
+  --dark-muted:#b9c0b2;--panel-radius:4px;--page-gutter:clamp(24px,6vw,110px);
+  --section-space:clamp(88px,9vw,144px);--content-width:1440px;
+  --heading-size:clamp(38px,4.4vw,66px);--detail-size:13px;
+  --ease:cubic-bezier(.22,1,.36,1);--surface-shadow:0 16px 48px #22252107;
+  --sans:'DM Sans','PingFang SC','Microsoft YaHei',sans-serif;
+  --serif:'Noto Serif SC','Songti SC','SimSun',serif;
+}
+::selection{background:#2d4af025;color:var(--ink)}
+.portfolio,.journal-reader{background:var(--paper);color:var(--ink)}
+.portfolio h2[tabindex="-1"]:focus{outline:none}
+.portfolio h2{font-size:var(--heading-size);line-height:1.4;letter-spacing:-.045em}
+.portfolio .section-pad{padding-block:var(--section-space);padding-inline:var(--page-gutter)}
+.portfolio .section-label,.shelf-headline p,.writing-eyebrow{font:400 12px/1.7 var(--sans);letter-spacing:.06em;color:var(--muted);margin-bottom:26px}
+.portfolio .section-heading{gap:48px;margin-bottom:60px}
+.portfolio .section-intro{font-size:14px;line-height:2;max-width:28em}
+.portfolio .text-link,.journal-bar>a:last-child,.journal-foot a,.writing-home-link{font-size:13px}
+.primary-button{border:1px solid transparent;border-radius:var(--panel-radius);min-height:48px;padding:14px 25px;box-shadow:0 6px 20px #2d4af012}
+.glass-button{border-color:var(--glass-edge);background:var(--glass);box-shadow:inset 0 1px 0 #ffffff9c,0 5px 20px #22252105;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);min-height:40px}
+.text-link,.cover-foot,.writing-inline-link{transition:color .25s var(--ease),border-color .25s var(--ease)}
+.text-link:hover,.writing-inline-link:hover{color:var(--accent)}
+
+/* The same translucent navigation surface opens all four collections. */
+.nav-shell,.journal-bar,.writing-header{
+  background:var(--glass);border:1px solid var(--glass-edge);border-radius:100px;
+  box-shadow:inset 0 1px 0 #fff,0 9px 32px #22252106;
+  backdrop-filter:blur(22px) saturate(1.08);-webkit-backdrop-filter:blur(22px) saturate(1.08);
+}
+.nav-shell{left:max(24px,calc((100vw - 1504px)/2));right:max(24px,calc((100vw - 1504px)/2));top:20px}
+.nav-inner{height:66px;gap:20px;padding-inline:26px}
+#navigation{gap:clamp(14px,2.3vw,34px)}
+#navigation a{font-size:12px;padding-inline:2px}
+#navigation a::after{height:1px;bottom:9px}
+.nav-shell .wordmark,.journal-bar .wordmark,.writing-brand{font-size:32px;letter-spacing:-.075em}
+.journal-bar,.writing-header{position:relative;z-index:5;max-width:1440px;margin:20px max(24px,calc((100vw - 1440px)/2));height:68px;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+.writing-brand{font-family:var(--sans);font-weight:600}
+.writing-brand small{font-family:var(--sans);letter-spacing:.06em;font-size:12px}
+
+/* Light, glass and a restrained contour continue into the large image area. */
+.portfolio .hero{padding-inline:var(--page-gutter);min-height:800px;max-height:1120px;grid-template-columns:1fr 1.05fr}
+.hero .intro-line{font-size:12px;letter-spacing:.06em;margin-bottom:30px}
+.hero h1{font-size:clamp(64px,7.6vw,116px);line-height:1.26;letter-spacing:-.065em}
+.hero-description{font-size:15px;line-height:2;margin:32px 0 34px}
+.hero-art{background:radial-gradient(ellipse at 56% 50%,#d5dace38,transparent 65%)}
+.hero-bottom{left:var(--page-gutter);right:var(--page-gutter);padding-top:22px;font-size:11px}
+.portfolio .photography{padding-inline:clamp(14px,3vw,48px);background:linear-gradient(var(--paper),#fff 18%,#fff)}
+.photography .section-heading{padding-inline:clamp(10px,3vw,62px)}
+.photography .collection-toolbar,.photography .collection-status{margin-inline:clamp(10px,3vw,62px)}
+.photography .collection-toolbar{padding-bottom:18px;border-bottom:1px solid var(--line)}
+.collection-status{padding-top:16px}
+.filters button,.view-switch button,.writing-filters button{min-height:36px;font-size:12px;padding:8px 17px}
+.view-switch{border:1px solid #d8dcd480;background:#e8e9e588}
+.view-switch button{min-height:30px;padding:5px 14px;font-size:11px}
+.photo-empty,.photo-button{border-radius:var(--panel-radius)}
+.photo-empty{min-height:560px;height:75svh;border:1px solid #ffffff80}
+.empty-frame{background:radial-gradient(ellipse at 56% 42%,#f5f6f2 0%,#e5e9e4 44%,#c6d1c9 100%)}
+.photo-empty .frame-index{color:#ffffff45;font-weight:400;letter-spacing:-.08em}
+.photo-empty .frame-square{border-color:#ffffff9c;box-shadow:36px 32px 75px #5c725215}
+.empty-copy h3{font-size:clamp(28px,3.3vw,46px);line-height:1.5;color:var(--ink)}
+.gallery-edition{font-size:10px;letter-spacing:.12em;color:var(--muted)}
+.empty-copy p{font-size:13px;color:var(--muted)}
+.photo-meta{padding:22px 4px 0;border-bottom:1px solid var(--line);padding-bottom:16px}
+.photo-meta h3{font-size:16px}.photo-meta span{font-size:12px}
+
+/* A stage folio and the writing tile share the same paper edges. */
+.portfolio .stage-section{gap:64px clamp(40px,7vw,112px);background:var(--ink)}
+.stage-section .section-label{color:var(--dark-muted)}
+.stage-intro>p:not(.section-label){font-size:14px;line-height:2.1;color:var(--dark-muted);max-width:30em}
+.experience-note{gap:24px;margin-top:48px}
+.experience-note>strong{font-size:clamp(54px,5.4vw,76px)}
+.experience-note>span{font-size:12px;color:var(--sage)}
+.experience-note small{font-size:11px;color:var(--dark-muted)}
+.stage-footnote{margin-top:0;padding-top:24px;color:var(--dark-muted);border-color:#d8dcd429;letter-spacing:.03em}
+.stage-book{--folio-paper:var(--mist);--folio-ink:var(--ink)}
+.stage-book-page{min-height:490px;border-left:3px solid var(--accent);border-radius:2px;padding:32px 36px 26px 40px;background:linear-gradient(110deg,#f5f5f2,var(--mist) 78%);box-shadow:inset 10px 0 18px -16px #22252150}
+.stage-book-stack{background:var(--sage);box-shadow:3px 3px 0 #89917f,6px 6px 0 #b1b7a9,0 26px 54px #00000029;transform:rotate(.7deg)}
+.stage-book-page::before{background:var(--line)}
+.stage-book-top,.stage-book-footer{border-color:#c5cbbe}
+.stage-book-title{font-size:clamp(29px,3vw,44px);line-height:1.5;margin-top:34px}
+.stage-book-subtitle,.stage-book-role{font-size:12px;color:var(--muted)}
+.stage-book-summary{font-size:13px;line-height:2;color:var(--muted);-webkit-line-clamp:4}
+.stage-book-period{font-size:11px;color:var(--muted)}
+.stage-book-open{font-size:13px}
+.stage-book-turn{background:#f5f5f208;border-color:#d8dcd449;backdrop-filter:blur(12px)}
+.stage-book-count{color:var(--sage);font-size:12px}
+
+/* Both media instruments sit in the same exhibition frame. */
+.portfolio .media-section{background:var(--mist);padding-bottom:clamp(60px,6vw,96px)}
+.media-columns{gap:clamp(32px,6vw,96px);grid-template-columns:1.15fr 1fr;align-items:stretch}
+.media-columns h3{font-size:16px;font-weight:400;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid #c5cbbe}
+.media-columns h3 small{font-size:11px}
+.screen-tile{background:var(--ink);border-radius:var(--panel-radius);aspect-ratio:16/12;padding:clamp(28px,3.5vw,52px);box-shadow:var(--surface-shadow)}
+.screen-word{color:var(--sage);font-size:clamp(44px,5.2vw,78px)}
+.screen-corner{border-color:#d5daceaa;width:24px;height:24px}
+.screen-tile-caption{margin-top:36px}.screen-tile-title{font-size:13px}
+.audio-column{display:flex;flex-direction:column;min-width:0}
+#audio-list{display:flex;flex-direction:column;gap:24px;flex:1}
+.voice-track{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0;padding:32px 28px 30px;background:linear-gradient(135deg,#f5f5f2a6,#f5f5f233);border:1px solid #ffffff70;border-radius:var(--panel-radius);box-shadow:inset 0 1px 0 #ffffff80;backdrop-filter:blur(12px)}
+.voice-track+.voice-track{margin-top:0;padding-top:28px;border-top-color:var(--glass-edge)}
+.voice-wave{height:116px;margin:0;gap:4px}
+.voice-wave i{max-width:3px;background:var(--accent)}
+.voice-title{font-size:clamp(25px,2.8vw,34px);line-height:1.5;margin-top:24px}
+.voice-action{font-size:12px}.voice-action-icon{border-color:#b6bdb0}
+
+/* Two quiet windows: same contour as a video frame, same translucency as the hero. */
+.portfolio .interests{padding:clamp(60px,6vw,96px) var(--page-gutter) 0;background:linear-gradient(var(--mist),var(--paper) 75%)}
+.interests>.section-label{margin-bottom:30px}
+.journal-pair{gap:clamp(28px,6vw,96px);padding-bottom:var(--section-space);border-color:var(--line)}
+.interest-cover{padding-bottom:0}
+.interest-art{margin:0 0 32px;aspect-ratio:1.44;max-height:360px;background:linear-gradient(138deg,#f5f5f238,#ffffff66 50%,#d5dace30);border:1px solid #ffffff90;border-radius:var(--panel-radius);box-shadow:inset 0 1px 0 #fff8;overflow:hidden}
+.interest-art::before{inset:15%;background:radial-gradient(ellipse,#d5dace60,transparent 70%);filter:blur(18px)}
+.interest-art::after{content:'';position:absolute;inset:17px;pointer-events:none;background:linear-gradient(var(--muted),var(--muted)) top left/22px 1px,linear-gradient(var(--muted),var(--muted)) top left/1px 22px,linear-gradient(var(--muted),var(--muted)) bottom right/22px 1px,linear-gradient(var(--muted),var(--muted)) bottom right/1px 22px;background-repeat:no-repeat;opacity:.36;transition:inset .6s var(--ease),opacity .4s}
+.interest-art .cover-art{width:88%;height:88%;margin:4% auto;filter:contrast(1.12)}
+.interest-cover h2{font-size:var(--heading-size)}
+.cover-foot{margin-top:20px;padding-bottom:18px;font-size:13px;border-color:var(--line)}
+.cover-foot b{width:36px;height:36px;border:1px solid #c5cbbe;border-radius:50%;font-size:21px;background:#f5f5f24d}
+.interest-cover:is(:hover,:focus-visible) .interest-art::after{inset:12px;opacity:.65}
+
+.portfolio .about-section{gap:clamp(40px,8vw,128px);background:var(--paper)}
+.about-copy{align-self:center;max-width:37em}
+.about-copy .about-lead{font-size:clamp(20px,2.1vw,28px);line-height:1.9;margin-top:0!important}
+.about-copy>p{font-size:15px;line-height:2.1}
+.about-en{font-size:13px;color:var(--muted)}
+.about-skills{gap:8px;margin-block:32px}
+.about-skills span{font-size:11px;padding:7px 14px;background:#e8e9e54d}
+.writing-tile{width:min(100%,360px);min-height:250px;margin-top:42px;padding:30px;background:linear-gradient(130deg,#ffffffba,#f5f5f2);border-color:var(--glass-edge);border-radius:2px;box-shadow:var(--surface-shadow)}
+.writing-tile::before{background:var(--mist);border-color:var(--line);transform:rotate(1.4deg)}
+.writing-tile h3{font-size:32px;margin:28px 0;color:var(--ink)}
+.writing-tile-top{color:var(--muted)}.writing-tile-top>span:last-child{color:var(--accent)}
+.writing-tile-lines i{background:#c5cbbe}
+.portfolio .contact-section{background:#e5e8e0;padding-block:clamp(90px,10vw,160px)}
+.contact-section h2{font-size:clamp(70px,8.5vw,128px);line-height:1.25}
+.contact-section::after{border-color:#b6bfb080;box-shadow:0 0 0 28px #d4dbcf66,0 0 0 29px #c4cdbd88,0 0 0 70px #e9ece666}
+.contact-links{gap:28px;margin-top:44px}.contact-links>a{font-size:clamp(19px,2.3vw,30px);border-color:#9da694;padding-bottom:12px}
+.contact-location{margin-top:28px;font-size:12px}
+.footer{padding:32px var(--page-gutter);background:var(--paper)}
+
+/* Collection interiors inherit the same header, optical scale and paper surfaces. */
+.journal-reader .shelf-hero,.record-section,.journal-foot{max-width:var(--content-width);padding-inline:var(--page-gutter)}
+.shelf-hero{min-height:440px;padding-top:44px;padding-bottom:64px;grid-template-columns:1fr 1fr;gap:60px}
+.shelf-headline h1,.writing-intro h1{font:400 clamp(56px,6.4vw,92px)/1.36 var(--serif);letter-spacing:-.055em}
+.shelf-art{width:100%;max-height:330px;aspect-ratio:1.44;padding:24px;background:linear-gradient(135deg,#ffffff55,#d5dace30);border:1px solid #ffffff9c;border-radius:var(--panel-radius)}
+.shelf-hero::after{left:var(--page-gutter);right:var(--page-gutter)}
+.record-section{padding-block:72px 108px;min-height:350px}
+.record-head{padding-bottom:24px}.record-head h2{font-size:clamp(28px,3vw,42px)}
+.record-head span,.record-meta{font-size:12px}
+.record-row{grid-template-columns:160px minmax(0,1fr);gap:clamp(28px,5vw,80px);padding-block:36px}
+.record-cover{max-width:145px;border-radius:2px;box-shadow:0 8px 26px #2225210a;object-fit:contain;background:var(--mist)}
+.record-row h3{font-size:clamp(27px,2.8vw,38px);line-height:1.6}.record-note{font-size:15px;line-height:2.05;color:var(--muted);max-width:44em;margin-top:18px}
+.record-when{font-size:12px}.record-meta{line-height:1.9}
+.journal-foot{padding-block:30px;border-color:var(--line)}
+.writing-page{--writing-paper:var(--paper);--writing-ink:var(--ink);--writing-muted:var(--muted);--writing-line:var(--line);--writing-blue:var(--accent);--writing-sans:var(--sans);--writing-serif:var(--serif)}
+.writing-index{max-width:var(--content-width);padding:92px var(--page-gutter) 120px}
+.writing-intro{margin-bottom:64px}.writing-byline{font-size:13px}
+.writing-empty{padding-top:64px;gap:64px}
+.writing-blank-page{background:linear-gradient(130deg,#ffffffb3,var(--paper));border-color:var(--glass-edge);box-shadow:9px 9px 0 -1px var(--mist),9px 9px 0 0 var(--line);transform:rotate(-2deg);height:290px}
+.writing-empty h2{font-size:28px}.writing-row-body h2{font-size:clamp(26px,2.8vw,38px)}
+.writing-row-arrow{border-color:var(--line)}.reading-contents{background:var(--mist);border:1px solid var(--glass-edge);border-radius:var(--panel-radius)}
+.reading-summary,.reading-body blockquote{border-left-width:1px}
+.writing-footer{margin-inline:var(--page-gutter);padding-block:32px}
+.manager .surface{border-color:var(--glass-edge);box-shadow:var(--surface-shadow);background:#ffffffa8}
+.manager .cover-candidate{background:var(--mist)}
+
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  html[data-motion=running] .interest-cover:hover .interest-art{transform:translateY(-4px)}
+  .record-cover,.shelf-art{transition:transform .6s var(--ease),box-shadow .6s var(--ease)}
+  .record-row:hover .record-cover{transform:translateY(-3px);box-shadow:0 16px 32px #22252110}
+}
+@media(min-width:1600px){:root{--page-gutter:max(96px,calc((100vw - 1440px)/2))}.journal-reader .shelf-hero,.record-section,.journal-foot,.writing-index{padding-inline:72px}.shelf-hero::after{left:72px;right:72px}}
+@media(max-width:1100px){.stage-book-page{padding:28px 26px 26px 32px}.stage-book-title{font-size:31px}.voice-track{padding:24px 20px}.nav-shell .wordmark small{display:none}}
+@media(min-width:851px){.nav-shell .wordmark small{display:inline}}
+@media(max-width:900px){.portfolio .stage-section{grid-template-columns:1fr 1fr;gap:40px}.stage-book-footer{flex-direction:column;align-items:flex-start}.stage-book-open{align-self:flex-end}.experience-note{align-items:flex-start;flex-direction:column;gap:16px}.media-columns{gap:32px}.screen-word{font-size:52px}.shelf-hero{gap:24px;min-height:360px}.shelf-headline h1{font-size:58px}.stage-intro h2{font-size:40px}}
+@media(max-width:720px){
+  :root{--page-gutter:24px;--section-space:80px;--heading-size:clamp(36px,8.4vw,46px)}
+  .nav-shell{left:16px;right:16px;top:12px}.nav-inner{height:58px;padding-inline:18px;gap:12px}.nav-shell .wordmark small{display:inline}.nav-shell .wordmark{font-size:30px}
+  #navigation{gap:0;background:var(--glass);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}#navigation a{font-size:15px;padding:14px}
+  .portfolio .hero{min-height:0;padding:132px 24px 92px;display:block}.hero h1{font-size:clamp(50px,15.4vw,68px)}
+  .hero .intro-line{font-size:10px;margin-bottom:24px}.hero-description{font-size:14px;line-height:1.95;margin:26px 0}
+  .hero-art{height:370px;margin:-12px -48px 12px 0}.hero-bottom{font-size:10px;bottom:24px;padding-top:16px}
+  .portfolio .section-heading{margin-bottom:38px;gap:24px}.portfolio .section-label{font-size:11px;margin-bottom:22px}
+  .portfolio .photography{padding-inline:12px}.photography .section-heading{padding-inline:12px}.photography .collection-toolbar,.photography .collection-status{margin-inline:12px;padding-inline:0}
+  .photography .collection-toolbar{gap:8px}.filters button{padding:8px 10px;font-size:11px}.view-switch button{padding:5px 10px}.collection-status{padding-top:12px}
+  .photo-empty{min-height:480px;height:70svh}.empty-copy{left:24px;right:24px;bottom:32px}.empty-copy h3{font-size:28px}.gallery-edition{font-size:9px}
+  .portfolio .stage-section{display:block}.stage-intro h2{font-size:var(--heading-size)}.stage-intro>p:not(.section-label){font-size:13px}
+  .experience-note{flex-direction:row;align-items:center;margin-top:36px;gap:22px}.experience-note>strong{font-size:58px}.experience-note>span{font-size:11px}.experience-note small{font-size:10px}
+  .stage-book-page{min-height:465px;padding:28px 26px 24px 32px}.stage-book-title{font-size:clamp(28px,7vw,38px)}.stage-book-footer{flex-direction:row;align-items:center}.stage-footnote{margin-top:38px;font-size:10px}
+  .media-columns{grid-template-columns:1fr;gap:44px}.media-columns h3{font-size:15px;margin-bottom:22px;padding-bottom:16px}.screen-word{font-size:clamp(48px,15vw,64px)}.screen-tile{padding:34px;aspect-ratio:16/12;min-height:300px}.voice-track{min-height:0;padding:26px}.voice-title{font-size:28px}
+  .portfolio .interests{padding-top:52px}.journal-pair{gap:44px;padding-bottom:80px}.interest-art{margin-bottom:24px;max-height:none}.interest-cover h2{font-size:var(--heading-size)}.cover-foot{font-size:12px}
+  .portfolio .about-section{grid-template-columns:1fr;gap:56px}.about-copy{max-width:none}.about-copy .about-lead{font-size:22px!important}.about-copy>p{font-size:14px}.writing-tile{min-height:238px;width:calc(100% - 9px);max-width:380px}.writing-tile h3{font-size:30px}
+  .portfolio .contact-section{padding-block:88px}.contact-section h2{font-size:clamp(62px,15vw,82px)}.contact-links{margin-top:36px;gap:20px}.contact-links>a{font-size:20px;overflow-wrap:anywhere}.contact-links>a span{margin-left:8px}
+  .journal-bar,.writing-header{height:62px;margin:14px 16px;padding-inline:20px}.journal-bar>a:last-child,.writing-home-link{font-size:11px}.writing-brand small{font-size:10px}
+  .shelf-hero{padding-block:36px 44px;min-height:0}.shelf-headline h1{font-size:48px}.shelf-art{max-height:250px;padding:16px}.shelf-headline p{font-size:11px;margin-bottom:18px}
+  .record-section{padding-block:48px 80px}.record-head h2{font-size:28px}.record-row{grid-template-columns:88px minmax(0,1fr);gap:22px;padding-block:28px}.record-row h3{font-size:25px}.record-note{font-size:13px;line-height:2}.record-meta{font-size:11px}.record-when{font-size:10px}
+  .journal-foot{font-size:11px;gap:16px}.journal-foot a{font-size:11px}.writing-index{padding:60px 24px 85px}.writing-intro{margin-bottom:48px}.writing-intro h1{font-size:clamp(48px,12vw,64px)}.writing-empty{gap:48px;padding-top:48px}.writing-empty h2{font-size:25px}.writing-row-body h2{font-size:25px}
+}
+@media(max-width:520px){.journal-pair{grid-template-columns:1fr}.interest-cover{grid-template-columns:1fr;grid-template-rows:auto auto auto}.interest-art{grid-column:auto;margin:0 0 24px;aspect-ratio:1.5}.cover-foot{margin-top:16px;font-size:12px}.interest-cover h2{font-size:38px}.shelf-hero{grid-template-columns:1fr;gap:26px}.shelf-art{grid-row:2;height:230px;margin:0}.shelf-headline h1{font-size:50px}}
+@media(max-width:360px){.nav-inner{gap:8px;padding-inline:15px}.wordmark small{margin-left:9px}.stage-book-footer{flex-direction:column;align-items:flex-start}.contact-links>a{font-size:18px}.experience-note{gap:15px}.experience-note>strong{font-size:50px}}
+@media(prefers-reduced-motion:reduce){.interest-art::after,.record-cover,.shelf-art{transition:none!important}.record-row:hover .record-cover{transform:none}}

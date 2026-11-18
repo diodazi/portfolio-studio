@@ -1,0 +1,48 @@
+/* The author's images are already collages: keep their complete composition. */
+.magazine-body[data-preset=annual]{--annual-paper:#f5f5f2;--annual-sage:#e4e8df;--annual-ink:#263428;font-family:"Portfolio notoserifsc",serif;color:var(--annual-ink);font-size:18px;line-height:1.95}
+.magazine-body[data-preset=annual]>.mag-block{margin-block:0 64px}
+.magazine-body[data-preset=annual] .editorial-component{--ec-paper:var(--annual-paper);--ec-ink:var(--annual-ink);--ec-body-size:18px;background:transparent;padding:32px 0;line-height:1.95}
+.magazine-body[data-preset=annual] .ec-title{font-family:"Portfolio notoserifsc",serif;font-size:24px;line-height:1.7;letter-spacing:0;margin-bottom:20px}
+.magazine-body[data-preset=annual] .ec-body{font-size:18px;line-height:1.95}
+.magazine-body[data-preset=annual] .ec-title:empty,.magazine-body[data-preset=annual] .ec-item-title:empty,.magazine-body[data-preset=annual] .ec-body:empty{display:none}
+.magazine-body[data-preset=annual] .ec-intro:has(.ec-title:empty):not(:has(.ec-label)){display:none}
+.magazine-body[data-preset=annual] :is(.ec-split,.ec-spread){grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:44px;align-items:center}
+.magazine-body[data-preset=annual] :is(.ec-split,.ec-spread)>.ec-copy{padding:0}
+.magazine-body[data-preset=annual] :is(.ec-split,.ec-spread) .ec-media{aspect-ratio:1;min-height:0}
+.magazine-body[data-preset=annual] .ec-media>img{object-fit:contain;border-radius:0}
+.magazine-body[data-preset=annual] .ec-split .ec-label,.magazine-body[data-preset=annual] .ec-chapter-number{font:500 clamp(84px,12cqi,142px)/.9 "Portfolio dmsans",sans-serif;font-size:clamp(84px,12cqi,142px)!important;letter-spacing:-.08em;color:var(--annual-ink);opacity:1;margin-bottom:38px}
+.magazine-body[data-preset=annual] .ec-split>.ec-picture{transform:rotate(1.4deg);padding:12px;background:var(--annual-paper);box-shadow:11px 13px 0 var(--annual-sage)}
+.magazine-body[data-preset=annual] .ec-split>.ec-picture:after{content:'';position:absolute;top:-10px;left:42%;width:70px;height:23px;background:#aebda48f;transform:rotate(-6deg);pointer-events:none}
+.magazine-body[data-preset=annual] .ec-spread{border-block:1px solid #cbd2c4;padding-block:44px}
+.magazine-body[data-preset=annual] .ec-spread[data-tone=sage]{background:var(--annual-sage);padding:44px 32px}
+.magazine-body[data-preset=annual] .ec-spread[data-side=left]>.ec-picture{transform:translateY(16px)}
+.magazine-body[data-preset=annual]>.mag-block[data-type=paragraph]{max-width:40em;margin:48px auto 72px;font-size:18px}
+.magazine-body[data-preset=annual] .ec-contact-sheet{padding-block:12px 34px;border:0;box-shadow:none}
+.magazine-body[data-preset=annual] .ec-contact-sheet .ec-gallery{grid-template-columns:repeat(var(--ec-cols),minmax(0,1fr));gap:24px;align-items:start}
+.magazine-body[data-preset=annual] .ec-contact-sheet .ec-gallery-item{border:0;padding:0;background:transparent;min-width:0}
+.magazine-body[data-preset=annual] .ec-contact-sheet .ec-gallery-item:nth-child(even){margin-top:42px}
+.magazine-body[data-preset=annual] .ec-contact-sheet[data-side=right] .ec-gallery-item:nth-child(odd){margin-top:42px}
+.magazine-body[data-preset=annual] .ec-contact-sheet[data-side=right] .ec-gallery-item:nth-child(even){margin-top:0}
+.magazine-body[data-preset=annual] .ec-contact-sheet .ec-caption{font:12px/1.8 "Portfolio dmsans","Portfolio notosanssc",sans-serif;color:#687062;letter-spacing:.03em;padding-top:4px}
+.magazine-body[data-preset=annual] .ec-contact-sheet[data-style=archive] .ec-media{aspect-ratio:auto;min-height:0}
+.magazine-body[data-preset=annual] .ec-contact-sheet[data-style=archive] .ec-media>img{height:auto;width:100%}
+.magazine-body[data-preset=annual] .ec-contact-sheet[data-style=archive] .ec-picture{padding:8px;background:white;box-shadow:4px 6px 0 var(--annual-sage)}
+.magazine-body[data-preset=annual] .ec-callout{padding:44px clamp(24px,7cqi,72px);background:var(--annual-sage);border:0;max-width:800px;margin:0 auto;position:relative}
+.magazine-body[data-preset=annual] .ec-callout:after{content:'';width:38px;height:38px;position:absolute;top:0;right:0;background:linear-gradient(225deg,var(--annual-paper) 50%,#b9c6b1 51%);pointer-events:none}
+.magazine-body[data-preset=annual] .ec-chapter{border:0;padding-top:20px;min-height:0}
+.magazine-body[data-preset=annual] .ec-chapter>.ec-body{max-width:40em}
+.ec-lightbox.ec-lightbox-tall{width:min(600px,94vw);overflow:auto}
+.ec-lightbox.ec-lightbox-tall>img{max-height:none;width:auto;height:auto;max-width:100%}
+@media(max-width:700px){
+ .magazine-body[data-preset=annual]>.mag-block{margin-bottom:38px}
+ .magazine-body[data-preset=annual] :is(.ec-split,.ec-spread){grid-template-columns:1fr;gap:32px}
+ .magazine-body[data-preset=annual] .ec-split>.ec-copy{order:-1}
+ .magazine-body[data-preset=annual] .ec-split>.ec-picture{width:92%;justify-self:center}
+ .magazine-body[data-preset=annual] .ec-spread[data-tone=sage]{padding:30px 20px}
+ .magazine-body[data-preset=annual] .ec-title{font-size:22px}
+ .magazine-body[data-preset=annual] .editorial-component{--ec-body-size:17px}
+ .magazine-body[data-preset=annual] .ec-contact-sheet .ec-gallery{grid-template-columns:1fr;gap:28px}
+ .magazine-body[data-preset=annual] .ec-contact-sheet .ec-gallery-item:nth-child(n){margin-top:0}
+ .magazine-body[data-preset=annual] .ec-contact-sheet[data-style=archive] .ec-gallery{grid-template-columns:1fr 1fr;gap:18px}
+ .magazine-body[data-preset=annual] .ec-callout{padding:30px 22px}
+}

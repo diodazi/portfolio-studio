@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#F5F5F2"><meta name="description" content="个人作品与创作档案网站框架。">
+  <title>Portfolio Studio · 创作档案</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./assets/fonts/fonts.css"><link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./stage-book.css"><link rel="stylesheet" href="./media-experience.css"><link rel="stylesheet" href="./writing.css"><link rel="stylesheet" href="./ambient.css"><link rel="stylesheet" href="./motion.css"><link rel="stylesheet" href="./journal.css">
+  <script type="module" src="./app.js"></script>
+<link rel="stylesheet" href="./visual-system.css">
+<link rel="stylesheet" href="./game-home.css"><link rel="stylesheet" href="./photography.css"></head>
+<body class="portfolio">
+<a class="skip" href="#main">跳到主要内容</a>
+<header class="nav-shell"><div class="nav-inner">
+  <a class="wordmark" href="#top" aria-label="站点作者首页">Portfolio<span>.</span><small>站点作者</small></a>
+  <nav id="navigation" aria-label="主导航"><a href="#photography">摄影</a><a href="#stage">现场</a><a href="#media">影像与声音</a><a href="#games">游戏</a><a href="#cinema">电影</a><a href="#about">关于</a></nav>
+  <a class="contact-nav" href="#contact">联系合作 <span aria-hidden="true">↗</span></a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" aria-label="打开导航"><span></span><span></span></button>
+</div></header>
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-heading">
+    <div class="hero-copy"><p class="intro-line">摄影 · 演出执行 · 影像与声音</p><h1 id="hero-heading">记录，<br>与创造。</h1><p class="hero-description">在这里展示作品，<br>记录创作与观察。</p><a class="primary-button" href="#photography">进入作品集 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a></div>
+    <div class="hero-art"><canvas id="light-field" aria-hidden="true"></canvas><div class="art-caption"><button id="rotate-art" class="glass-button art-control" aria-label="切换视角" title="切换视角"><span aria-hidden="true">↻</span></button><button id="motion-toggle" class="glass-button art-control" aria-label="暂停背景动效" aria-pressed="false" title="暂停背景动效"><svg class="motion-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><svg class="motion-play" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"/></svg></button></div></div>
+    <div class="hero-bottom"><span>Your city</span><a href="#photography">向下探索 <span aria-hidden="true">↓</span></a><span>Personal archive / 2026</span></div>
+  </section>
+
+  <section class="photography section-pad" id="photography" aria-labelledby="photography-heading">
+    <div class="section-heading"><div><p class="section-label">摄影作品</p><h2 id="photography-heading">把目光，<br>留给画面。</h2></div><p class="section-intro">人、城市和舞台。<br>每一次按下快门，都是一次观看。</p></div>
+    <div class="collection-toolbar"><button class="photo-shuffle" id="shuffle-photos" type="button"><span aria-hidden="true">↻</span>换一组</button></div>
+    <p id="collection-status" class="collection-status" aria-live="polite"></p>
+    <div id="photo-grid" class="photo-grid photo-mosaic"></div>
+    <div id="photo-empty" class="photo-empty" hidden><div class="empty-frame" aria-hidden="true"><span class="frame-index">01</span><div class="frame-square"></div></div><div class="empty-copy"><span class="gallery-edition">PHOTOGRAPHIC ARCHIVE</span><h3>把空间，留给影像。</h3><p>摄影作品正在整理</p></div></div>
+    <div class="photography-footer"><a class="text-link" id="all-photography" href="./photography.html"><span>查看全部摄影</span><b aria-hidden="true">↗</b></a></div>
+  </section>
+
+  <section class="stage-section section-pad" id="stage" aria-labelledby="stage-heading">
+    <div class="stage-intro"><p class="section-label">参与的现场</p><h2 id="stage-heading">幕前的片刻，<br>幕后的许多天。</h2><p>从创排、舞台准备，到驻场与跨城巡演。<br>让每一个环节，在现场找到自己的位置。</p><div class="experience-note"><strong>0</strong><span>已收录项目<br><small>通过本地管理台添加项目</small></span></div></div>
+    <div class="project-list" id="project-list"></div>
+    <p class="stage-footnote">舞台监督 / 演出执行 / 道具制作 / 剧场沟通</p>
+  </section>
+
+  <section class="media-section section-pad" id="media" aria-labelledby="media-heading">
+    <div class="section-heading"><div><p class="section-label">影像与声音</p><h2 id="media-heading">画面之外，<br>还有回响。</h2></div><p class="section-intro">从创意、拍摄到后期。<br>也让声音，成为表达的一部分。</p></div>
+    <div class="media-columns"><div class="film-column"><h3>影像制作 <small>Motion</small></h3><div id="video-list"></div></div>
+    <div class="audio-column"><h3>声音表达 <small>Voice</small></h3><div id="audio-list"></div></div></div>
+  </section>
+
+  <section class="game-home section-pad" id="games" aria-labelledby="games-heading">
+    <span id="interests" class="collection-anchor" aria-hidden="true"></span>
+    <div class="game-showcase">
+      <div class="game-home-copy">
+        <p class="section-label">游玩之后</p>
+        <h2 id="games-heading">游戏评价</h2>
+        <p class="collection-lead">玩过的世界，<br>留下的感受。</p>
+        <p class="collection-explainer">点开封面，读一段简评，<br>或翻阅一篇游戏杂志。</p>
+        <a class="text-link game-all-link" href="./games.html"><span class="collection-link-label">查看全部游戏</span><span aria-hidden="true">↗</span></a>
+        <p class="home-game-count" id="home-game-count" hidden></p>
+        <div class="game-reading-picks" id="game-reading-picks" hidden><p>从这篇读起</p><div id="game-featured-links"></div></div>
+      </div>
+      <div class="game-wall-shell">
+        <div class="game-wall" id="game-wall" role="group" aria-label="游戏封面与评价" data-running="false">
+          <div class="game-wall-status" id="game-wall-status" role="status">正在载入游戏封面…</div>
+          <div class="game-cover-grid" id="game-cover-grid"></div>
+        </div>
+        <div class="game-wall-footer"><div class="game-home-categories"><a href="./games.html#brief">简评游戏</a><span aria-hidden="true">/</span><a href="./games.html#detailed">杂志详评</a></div><button class="wall-motion-toggle" id="wall-motion-toggle" type="button" aria-pressed="false" aria-controls="game-cover-grid" hidden><span class="wall-motion-icon" aria-hidden="true">Ⅱ</span><span class="wall-motion-label">暂停滚动</span></button></div>
+      </div>
+    </div>
+    <noscript><p class="collection-explainer">开启 JavaScript 可浏览封面墙，也可以直接<a href="./games.html">查看全部游戏</a>。</p></noscript>
+  </section>
+  <section class="cinema-home section-pad" id="cinema" aria-labelledby="cinema-heading">
+    <div class="cinema-home-copy"><p class="section-label">观影之后</p><h2 id="cinema-heading">电影手记</h2><p class="collection-lead">散场之后，<br>故事还在继续。</p><p class="collection-explainer" id="home-cinema-status" role="status">看过的电影，和想留下的片刻。</p><a class="text-link cinema-all-link" href="./cinema.html"><span class="collection-link-label">查看全部电影</span><span aria-hidden="true">↗</span></a></div>
+    <div class="cinema-home-screen" id="home-cinema-screen"><div class="cinema-home-empty" id="home-cinema-empty"><img src="./assets/cinema-light.svg" alt="" width="640" height="480" loading="lazy"><p>观影手记正在整理</p></div><div class="cinema-home-posters" id="home-cinema-posters" hidden></div></div>
+  </section>
+  <section class="about-section section-pad" id="about" aria-labelledby="about-heading">
+    <div><p class="section-label">关于作者</p><img id="about-portrait" class="about-portrait" alt="作者照片" hidden>
+      <h2 id="about-heading">关于，<br>创作的人。</h2><p class="about-en">A personal creative archive.</p>
+      <a class="writing-tile" href="./writing.html" aria-label="阅读文字与随笔">
+        <div class="writing-tile-top"><span>文字与随笔</span><span aria-hidden="true">↗</span></div>
+        <h3>纸页之间。</h3><div class="writing-tile-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+      </a>
+    </div>
+    <div class="about-copy"><p class="about-lead">在这里介绍自己。</p>
+      <p>写下你的背景、关注的领域和创作方式。</p><p>从本地管理台编辑介绍、技能与联系方式。</p>
+      <div class="about-skills"><span>摄影</span><span>影像</span><span>写作</span><span>设计</span></div>
+      <a class="text-link" href="#" hidden target="_blank" rel="noopener">查看简历 <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+  <section class="contact-section section-pad" id="contact"><p class="section-label">一起做点有意思的事</p><h2>现场，见。</h2><div class="contact-links"><a href="mailto:hello@example.com">hello@example.com <span aria-hidden="true">↗</span></a><button id="copy-email" class="glass-button">复制邮箱</button></div><p class="contact-location">通过本地管理台填写联系方式</p></section>
+</main>
+<footer class="footer"><a class="wordmark" href="#top">Portfolio<span>.</span></a><p>© <span id="year">2026</span> 站点作者</p><a href="#top">回到顶部 ↑</a></footer>
+<dialog id="work-dialog" aria-labelledby="work-title"><div class="dialog-shell"><div class="dialog-top"><span id="work-counter"></span><button class="icon-button" data-close aria-label="关闭作品查看">×</button></div><div class="work-stage" id="work-stage"></div><div class="work-info"><div><h2 id="work-title"></h2><p id="work-description"></p></div><div class="work-actions"><button id="zoom-work" class="glass-button">放大</button><button id="prev-work" class="icon-button" aria-label="上一件作品">←</button><button id="next-work" class="icon-button" aria-label="下一件作品">→</button></div></div></div></dialog>
+<dialog id="project-dialog" aria-labelledby="project-title"><div class="project-dialog-inner"><button class="icon-button close-project" data-close aria-label="关闭项目详情">×</button><p class="section-label" id="project-role"></p><h2 id="project-title"></h2><p id="project-period"></p><div id="project-description"></div></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div><noscript><p class="noscript-note">作品分类、媒体播放与交互视觉需要开启 JavaScript。仍可浏览本页个人介绍及联系方式。</p></noscript>
+</body></html>

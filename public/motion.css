@@ -1,0 +1,20 @@
+/* Movement carries light, depth and orientation; it adds no explanatory copy. */
+.art-caption{justify-content:flex-end;gap:10px}
+.art-caption .art-control{width:44px;height:44px;padding:0;font-size:21px;gap:0}
+.art-control svg{width:17px;height:17px;stroke-width:1.8}
+.motion-play{display:none}
+#motion-toggle[aria-pressed=true] .motion-play{display:block}
+#motion-toggle[aria-pressed=true] .motion-pause{display:none}
+.page-progress{position:fixed;left:0;right:0;top:0;height:2px;z-index:45;background:var(--accent);transform:scaleX(0);transform-origin:left;pointer-events:none}
+.stage-book-viewport{transition:transform 400ms cubic-bezier(.22,1,.36,1)}
+html[data-motion=running] .photo-button img{transition:transform 350ms cubic-bezier(.22,1,.36,1)}
+.text-link svg,.text-link span,.primary-button svg,.contact-nav>span{transition:transform 300ms var(--ease)}
+@media(hover:hover) and (pointer:fine){
+ html[data-motion=running] .text-link:hover span,html[data-motion=running] .contact-nav:hover>span{transform:translate(3px,-3px)}
+ html[data-motion=running] .primary-button:hover svg{transform:translateX(5px)}
+ html[data-motion=running] .screen-tile:hover .screen-corner-start{transform:translate(-4px,-4px)}
+ html[data-motion=running] .screen-tile:hover .screen-corner-end{transform:translate(4px,4px)}
+ .screen-tile .screen-corner{transition:transform 360ms cubic-bezier(.22,1,.36,1)}
+}
+html[data-motion=paused] .stage-book-viewport,html[data-motion=paused] .photo-button img{transition:none}
+@media(prefers-reduced-motion:reduce){.page-progress{display:none}.stage-book-viewport,.photo-button img{transition:none!important}}

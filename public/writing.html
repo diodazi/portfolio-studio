@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f2">
+  <meta name="description" content="站点作者的文字、随笔与创作记录。">
+  <title>文字与随笔 — 站点作者 Portfolio</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/fonts/fonts.css">
+  <link rel="stylesheet" href="./writing.css">
+  <script type="module" src="./writing.js"></script>
+<link rel="stylesheet" href="./visual-system.css">
+<link rel="stylesheet" href="./magazine.css">
+</head>
+<body class="writing-page">
+  <a class="writing-skip" href="#writing-main">跳到主要内容</a>
+  <header class="writing-header">
+    <a class="writing-brand" href="./" aria-label="站点作者首页">Portfolio<span>.</span><small>站点作者</small></a>
+    <a class="writing-home-link" href="./#about">返回作品集 <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="writing-main">
+    <section class="writing-index" id="writing-index" aria-labelledby="writing-heading">
+      <div class="writing-intro">
+        <div><p class="writing-eyebrow">文字与随笔</p><h1 id="writing-heading" tabindex="-1">纸页之间。</h1></div>
+        <p class="writing-byline">站点作者的文字档案</p>
+      </div>
+      <div id="writing-filters" class="writing-filters" role="group" aria-label="按主题浏览" hidden></div>
+      <p id="writing-count" class="writing-count" aria-live="polite"></p>
+      <div id="writing-list" class="writing-list"></div>
+      <div id="writing-empty" class="writing-empty" hidden>
+        <div class="writing-blank-page" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div><h2>文字作品，正在整理。</h2><a href="./#about" class="writing-inline-link">回到作品集 <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div id="writing-error" class="writing-error" role="alert" hidden><h2>文字目录暂未载入。</h2><p>请检查网络连接后重试。</p><button type="button" id="writing-retry">重新载入</button></div>
+    </section>
+    <section id="reading-view" class="reading-view" hidden aria-labelledby="reading-title">
+      <div class="reading-toolbar"><a id="back-to-writing" href="./writing.html">← 全部文字</a><button type="button" id="copy-writing-link">复制文章链接</button></div>
+      <article class="reading-article">
+        <header class="reading-header"><p class="reading-meta" id="reading-meta"></p><h1 id="reading-title" tabindex="-1"></h1><p id="reading-summary" class="reading-summary"></p></header>
+        <div class="reading-layout"><aside class="reading-contents" id="reading-contents" aria-label="文章目录" hidden><p>本文目录</p><nav id="reading-toc"></nav></aside><div class="reading-body" id="reading-body"></div></div>
+        <footer class="reading-footer"><span>站点作者</span><a href="./writing.html" id="reading-end-back">返回文字目录</a></footer>
+      </article>
+    </section>
+    <section class="writing-missing" id="writing-missing" hidden><p class="writing-eyebrow">文字与随笔</p><h1 tabindex="-1">这篇文字暂未公开。</h1><p>文章可能尚未发布，或链接已经改变。</p><a class="writing-inline-link" href="./writing.html" id="missing-back">查看文字目录 <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="writing-footer"><span>© <span id="writing-year">2026</span> 站点作者</span><a href="./#contact">现场，见。</a></footer>
+  <div id="writing-toast" class="writing-toast" role="status" aria-live="polite"></div>
+  <noscript><p class="writing-noscript">请开启 JavaScript 查看文字目录，或<a href="./">返回作品集</a>。</p></noscript>
+</body>
+</html>

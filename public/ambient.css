@@ -1,0 +1,128 @@
+/* Ambient depth is attached to existing surfaces, never to reading text. */
+.photo-empty .empty-frame { isolation: isolate; }
+.photo-empty .empty-frame::before {
+  content: '';
+  position: absolute;
+  inset: -18%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 63% 39%, #ffffffbb 0, #ffffff22 27%, transparent 58%);
+  animation: ambient-gallery-light 22s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.photo-empty .empty-frame::after {
+  content: '';
+  position: absolute;
+  inset: -35% -15%;
+  pointer-events: none;
+  background: linear-gradient(108deg, transparent 38%, #ffffff24 48%, #ffffff70 50%, #ffffff16 54%, transparent 64%);
+  opacity: .5;
+  animation: ambient-gallery-sheen 28s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.photo-empty .frame-square {
+  animation: ambient-glass-sheet 18s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.photo-empty .frame-square::after {
+  animation: ambient-glass-edge 24s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+
+.stage-section { position: relative; isolation: isolate; overflow: clip; }
+.stage-section::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -32%;
+  right: -12%;
+  width: min(82vw, 1000px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #536bdb19 0, #7884ba0c 34%, transparent 66%);
+  pointer-events: none;
+  animation: ambient-stage-light 26s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+
+.contact-section::after {
+  transform-origin: 52% 52%;
+  animation: ambient-contact-orbit 24s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.about-section .writing-tile-lines i {
+  transform-origin: left center;
+  animation: ambient-paper-lines 11s ease-in-out infinite;
+  animation-play-state: paused;
+}
+.about-section .writing-tile-lines i:nth-child(2) { animation-delay: -3.6s; }
+.about-section .writing-tile-lines i:nth-child(3) { animation-delay: -7.2s; }
+
+html[data-motion='running'] .photography.is-inview .empty-frame::before,
+html[data-motion='running'] .photography.is-inview .empty-frame::after,
+html[data-motion='running'] .photography.is-inview .frame-square,
+html[data-motion='running'] .photography.is-inview .frame-square::after,
+html[data-motion='running'] .stage-section.is-inview::before,
+html[data-motion='running'] .contact-section.is-inview::after,
+html[data-motion='running'] .about-section.is-inview .writing-tile-lines i {
+  animation-play-state: running;
+}
+
+@keyframes ambient-gallery-light {
+  from { transform: translate(-3%, 2%) scale(.98); opacity: .65; }
+  to { transform: translate(4%, -3%) scale(1.04); opacity: 1; }
+}
+@keyframes ambient-gallery-sheen {
+  from { transform: translateX(-13%) rotate(-4deg); opacity: .25; }
+  to { transform: translateX(15%) rotate(3deg); opacity: .65; }
+}
+@keyframes ambient-glass-sheet {
+  from { transform: translate3d(0, 8px, 0) rotate(-10.5deg); }
+  to { transform: translate3d(-8px, -10px, 0) rotate(-7deg); }
+}
+@keyframes ambient-glass-edge {
+  from { transform: rotate(12deg) translate3d(0, 0, 0); opacity: .65; }
+  to { transform: rotate(16deg) translate3d(5px, -3px, 0); opacity: 1; }
+}
+@keyframes ambient-stage-light {
+  from { transform: translate3d(3%, 0, 0) scale(.94); opacity: .55; }
+  to { transform: translate3d(-8%, 7%, 0) scale(1.07); opacity: 1; }
+}
+@keyframes ambient-contact-orbit {
+  from { transform: translate3d(0, 9px, 0) scale(.97); opacity: .55; }
+  to { transform: translate3d(-12px, -8px, 0) scale(1.035); opacity: .75; }
+}
+@keyframes ambient-paper-lines {
+  0%, 100% { transform: scaleX(.91); opacity: .65; }
+  45%, 65% { transform: scaleX(1); opacity: 1; }
+}
+
+@media(max-width:720px) {
+  .photo-empty .frame-square { animation-name: ambient-glass-sheet-small; }
+  .photo-empty .frame-square::after { animation-name: ambient-glass-edge-small; }
+  .photo-empty .empty-frame::after { animation-duration: 34s; }
+  .stage-section::before { width: 110vw; top: -4%; right: -45%; opacity: .6; }
+  .contact-section::after { animation-name: ambient-contact-orbit-small; }
+}
+@keyframes ambient-glass-sheet-small {
+  from { transform: translate3d(0, 4px, 0) rotate(-10deg); }
+  to { transform: translate3d(-3px, -5px, 0) rotate(-8deg); }
+}
+@keyframes ambient-glass-edge-small {
+  from { transform: rotate(13deg); opacity: .7; }
+  to { transform: rotate(15deg); opacity: 1; }
+}
+@keyframes ambient-contact-orbit-small {
+  from { transform: translate3d(0, 4px, 0) scale(.985); opacity: .6; }
+  to { transform: translate3d(-5px, -4px, 0) scale(1.015); opacity: .75; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .photo-empty .empty-frame::before,
+  .photo-empty .empty-frame::after,
+  .photo-empty .frame-square,
+  .photo-empty .frame-square::after,
+  .stage-section::before,
+  .contact-section::after,
+  .about-section .writing-tile-lines i { animation: none !important; }
+}

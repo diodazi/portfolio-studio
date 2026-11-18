@@ -1,0 +1,77 @@
+/* One exhibition language: paper, sage glass, and a trace of blue light. */
+.portfolio .photography{position:relative;isolation:isolate;padding:clamp(58px,5vw,84px) var(--page-gutter) 56px;background:var(--paper);overflow:clip}
+.photography::before{content:'';position:absolute;inset:10% -15% 0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 68% 43%,#d4e3ee8f,transparent 47%),radial-gradient(ellipse at 25% 70%,#d5dace8f,transparent 49%)}
+.portfolio .photography .section-heading{padding:0;gap:32px;margin-bottom:18px;align-items:flex-end;position:relative;z-index:2}
+.portfolio .photography .section-label{margin-bottom:14px}.portfolio .photography h2{font-size:clamp(36px,3.5vw,50px);line-height:1.45}
+.portfolio #photography-heading br{display:none}.portfolio .photography .section-intro{font-size:13px}
+.photography .collection-toolbar,.photography-page .collection-toolbar{margin:0;padding:0;flex-direction:row;align-items:center;flex-wrap:wrap;border:0}
+.photography .collection-toolbar{justify-content:flex-end;position:relative;z-index:2}
+.photography .collection-status{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:0;padding:0}
+.photo-shuffle{display:inline-flex;align-items:center;gap:10px;background:#ffffff70;border:1px solid #ffffffc9;border-radius:30px;padding:8px 17px;font-size:12px;color:var(--muted);backdrop-filter:blur(14px)}
+.photo-shuffle span{font-size:20px;line-height:1;transition:transform .55s var(--ease)}.photo-shuffle:hover{color:var(--accent);background:#ffffffe0}.photo-shuffle:hover span{transform:rotate(100deg)}
+.photo-grid.photo-mosaic{display:flex;flex-direction:column;gap:46px;overflow:visible;padding:0;align-items:stretch}
+.photo-exhibit{position:relative;isolation:isolate;width:100%;min-height:200px;--light-x:0px;--light-y:0px;--scroll-depth:0px}
+.photo-exhibit::before{content:'';position:absolute;inset:6% -3% 4%;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 75% 40%,#cbddeba8,transparent 52%),radial-gradient(ellipse at 30% 65%,#cdd6c59e,transparent 50%);filter:blur(28px);transform:translate(var(--light-x),var(--light-y));transition:transform .7s ease}
+.photo-glass{position:absolute;left:14%;top:22%;width:68%;height:54%;z-index:1;border:1px solid #ffffffc9;background:linear-gradient(135deg,#ffffff8c,#eef2f14d 55%,#d7e3ec73);backdrop-filter:blur(16px);box-shadow:0 30px 80px #45524a0a;transform:translate(var(--light-x),calc(var(--light-y) + var(--scroll-depth))) rotate(-5deg);pointer-events:none;transition:transform .65s ease}
+.photo-contour{position:absolute;right:1%;top:2%;width:48%;height:87%;border:1px solid #aebeb72e;border-radius:50%;transform:translateY(calc(var(--scroll-depth) * -1)) rotate(28deg);pointer-events:none;z-index:0;transition:transform .65s ease}
+.photo-contour::before{content:'';position:absolute;inset:16px;border:1px solid #ffffffb5;border-radius:inherit}
+.photo-exhibit[data-variant='1'] .photo-glass{transform:translate(var(--light-x),calc(var(--light-y) + var(--scroll-depth))) rotate(5deg)}
+.photo-exhibit[data-variant='1'] .photo-contour{right:auto;left:0;transform:translateY(calc(var(--scroll-depth) * -1)) rotate(-28deg)}
+.photo-mosaic .photo-card,.photo-mosaic .photo-card:nth-child(n){position:absolute;min-width:0;padding:0;grid-column:auto;overflow:visible;z-index:var(--photo-depth,2);opacity:0;transform:translateY(20px) rotate(var(--photo-angle,0deg));transition:opacity .7s ease var(--reveal-delay),transform .85s var(--ease) var(--reveal-delay)}
+.photo-exhibit.is-visible .photo-card{opacity:1;transform:translateY(0) rotate(var(--photo-angle,0deg))}
+.photo-mosaic .photo-card:hover,.photo-mosaic .photo-card:focus-within{z-index:12}
+.photo-mosaic .photo-button{height:100%;width:100%;padding:0;border-radius:1px;background:transparent;box-shadow:0 10px 32px #263c3214,0 1px 2px #1c291519;transition:box-shadow .5s ease,transform .5s var(--ease);isolation:isolate}
+.photo-mosaic .photo-button:hover,.photo-mosaic .photo-button:focus-visible{transform:translateY(-5px);box-shadow:0 22px 48px #263c3229}
+.photo-mosaic .photo-card .photo-button img,.photo-mosaic .photo-card:nth-child(n) .photo-button img{height:100%;width:100%;min-height:0;max-height:none;aspect-ratio:auto;object-fit:contain;transform:none!important;transition:filter .55s ease}
+.photo-mosaic .photo-button::after{content:'';inset:0;border:0;border-radius:0;background:linear-gradient(0deg,#17231de6 0%,#17231d55 25%,transparent 55%);backdrop-filter:none;padding:0;transform:none;opacity:0;transition:opacity .45s ease;z-index:1}
+.photo-caption{position:absolute;left:18px;right:15px;bottom:16px;z-index:2;font:400 12px/1.65 var(--sans);letter-spacing:.02em;color:#fff;text-align:left;opacity:0;transform:translateY(5px);transition:opacity .4s ease,transform .4s ease;text-wrap:pretty}
+.photo-mosaic .photo-button:hover img,.photo-mosaic .photo-button:focus-visible img{filter:blur(2.5px)}
+.photo-mosaic .photo-button:hover::after,.photo-mosaic .photo-button:focus-visible::after,.photo-button:hover .photo-caption,.photo-button:focus-visible .photo-caption{opacity:1;transform:none}
+.photography-footer{position:relative;display:flex;align-items:center;justify-content:flex-end;gap:24px;padding-top:18px;border-top:1px solid var(--line);z-index:2}
+.photography-footer .text-link{margin:0;font-size:12px;gap:24px}.photography-footer .text-link>span{font-size:12px}.photography-footer .text-link>b{font-size:20px;font-weight:400}
+.portfolio .photography .photo-empty{height:300px;min-height:0;max-height:none}.photography .photo-empty[hidden],.photography-page .photo-empty[hidden]{display:none}
+.portfolio .photography .photo-empty .frame-index{font-size:100px}.portfolio .photography .empty-copy{bottom:30px}.portfolio .photography .empty-copy h3{font-size:28px}
+/* The archive carries the same open composition through a sequence of rooms. */
+.photography-page{background:var(--paper);isolation:isolate}
+.photography-page::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 5% 20%,#dbe4d999,transparent 50%),radial-gradient(ellipse at 95% 60%,#d4e3ed99,transparent 50%)}
+.photography-index{max-width:1600px;margin:auto;padding:60px clamp(24px,5vw,80px) 100px}
+.photography-index .section-heading{margin-bottom:38px}.photography-index .section-heading h1{font:400 clamp(36px,4.3vw,64px)/1.4 var(--serif)}
+.photography-page .collection-toolbar{padding-bottom:18px;border-bottom:1px solid var(--line)}
+.photography-page .collection-status{margin:14px 0 8px;font-size:11px;color:var(--muted)}
+.photography-page .photo-exhibit:not(:first-child)::after{content:'';position:absolute;left:35%;right:35%;top:-23px;border-top:1px solid #aebbb53b}
+.photography-page .photo-empty{height:260px;min-height:0;display:grid;place-content:center;font-size:15px;color:var(--muted)}
+.photo-more{display:block;margin:38px auto 0;padding:12px 30px;font-size:13px;border:1px solid #fff;background:#ffffff70;backdrop-filter:blur(12px);border-radius:30px}.photo-more:hover{background:#fff}.photo-more[hidden]{display:none}
+/* Viewer: translucent surrounding light, a fixed stage, and transform-based zoom. */
+#work-dialog{width:calc(100vw - 40px);height:calc(100dvh - 40px);max-width:1800px;max-height:none;margin:auto;border:1px solid #ffffffd9;border-radius:18px;background:#e9ede8;color:var(--ink);overflow:hidden;box-shadow:0 30px 100px #243c2926;isolation:isolate}
+#work-dialog::backdrop{background:#d2dcd3a6;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+#work-dialog .work-ambience{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-2}
+#work-dialog .work-backdrop{position:absolute;inset:-10%;height:120%;width:120%;max-width:none;object-fit:cover;opacity:.34;filter:blur(60px) saturate(.65);pointer-events:none}
+#work-dialog::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#f5f5f2b5,#e4edf46b 55%,#dbe3d6b8);pointer-events:none;z-index:-1}
+#work-dialog .dialog-shell{height:100%;width:100%;min-height:0;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:18px;padding:16px 28px 22px;overflow:hidden}
+#work-dialog .dialog-top{margin:0;color:var(--muted);gap:18px;min-height:40px;font-size:12px}
+#work-dialog .work-load-status{flex:1;text-align:right;font-size:11px;color:var(--muted)}
+#work-dialog .icon-button{flex:none;width:38px;height:38px;font-size:21px;border:1px solid #ffffffd9;background:#ffffff6b;color:var(--ink);backdrop-filter:blur(12px)}
+#work-dialog .icon-button:hover{background:#ffffffdf}
+#work-dialog #work-stage{position:relative;display:block;min-height:0;height:100%;width:100%;overflow:hidden;background:transparent;border-radius:2px;touch-action:none;user-select:none;outline-offset:-3px}
+#work-dialog #work-stage img,#work-dialog #work-stage.zoomed img{position:absolute;top:50%;left:50%;max-width:none;max-height:none;min-height:0;object-fit:contain;transform-origin:center;will-change:transform;pointer-events:none;box-shadow:0 14px 48px #24332c21}
+#work-dialog #work-stage.zoomed{cursor:grab}#work-dialog #work-stage.is-dragging.zoomed{cursor:grabbing}
+#work-dialog .work-info{display:flex;align-items:center;justify-content:space-between;margin:0;gap:20px;min-width:0}
+#work-dialog .work-info>div:first-child{min-width:0}
+#work-dialog #work-title{font:400 clamp(15px,1.4vw,20px)/1.5 var(--serif);letter-spacing:0;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-wrap:pretty}
+#work-dialog #work-description{font:400 11px/1.6 var(--sans);color:var(--muted);margin-top:4px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+#work-dialog #work-description:empty{display:none}
+#work-dialog .work-actions{gap:10px;flex-wrap:wrap}
+#work-dialog .glass-button{padding:9px 16px;font-size:11px;background:#ffffff80;color:var(--ink);border-color:#ffffffd9}
+.work-zoom-controls{display:flex;align-items:center;border:1px solid #ffffffd9;border-radius:30px;background:#ffffff6b;overflow:hidden;height:36px}
+.work-zoom-controls button{width:32px;height:34px;background:none;border:0;padding:0;font-size:18px}.work-zoom-controls button:hover{background:#ffffffa3}.work-zoom-controls output{font:11px/1 var(--sans);min-width:42px;text-align:center;font-variant-numeric:tabular-nums}
+@media(max-width:1000px){#work-dialog .work-zoom-controls{display:none}}
+@media(max-width:680px){
+ .portfolio .photography{padding:52px 20px 45px}.portfolio .photography .section-heading{margin-bottom:16px;align-items:flex-start;gap:16px}.portfolio .photography h2{font-size:33px}.photo-shuffle{font-size:11px;padding:7px 13px;gap:7px}
+ .photo-grid.photo-mosaic{gap:28px}.photo-glass{left:10%;top:15%;width:78%;height:66%}.photo-contour{right:-5%;top:5%;width:80%;height:80%}.photo-caption{font-size:10px;left:10px;right:10px;bottom:9px}
+ .photography-footer{padding-top:14px}.photography-index{padding:40px 20px 70px}.photography-index .section-heading{margin-bottom:24px}.photography-page .filters{gap:1px}.photography-page .filters button{font-size:11px;padding:8px 9px}.photography-page .collection-toolbar{gap:12px}.photography-page .section-intro{font-size:12px}
+ #work-dialog{width:calc(100vw - 16px);height:calc(100dvh - 16px);border-radius:12px}#work-dialog .dialog-shell{padding:10px 12px 16px;gap:12px}#work-dialog .dialog-top{gap:10px;font-size:11px}#work-dialog .work-info{flex-direction:column;align-items:stretch;gap:12px}#work-dialog .work-actions{justify-content:flex-end;gap:8px}#work-dialog .work-load-status{font-size:10px}
+}
+@media(hover:none){.photo-caption{opacity:1;transform:none}.photo-mosaic .photo-button::after{opacity:.7}.photo-mosaic .photo-button:hover img{filter:none}.photo-mosaic .photo-button:hover{transform:none}}
+html[data-motion=paused] .photo-exhibit *,html[data-motion=paused] .photo-exhibit::before{transition:none!important}
+html[data-motion=paused] .photo-exhibit .photo-card{opacity:1;transform:rotate(var(--photo-angle,0deg))}
+@media(prefers-reduced-motion:reduce){.photo-exhibit *,.photo-exhibit::before,.photo-shuffle span{transition:none!important}.photo-exhibit .photo-card{opacity:1;transform:rotate(var(--photo-angle,0deg))}#work-dialog[open]{animation:none}}
